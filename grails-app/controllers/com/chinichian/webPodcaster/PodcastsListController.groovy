@@ -2,7 +2,7 @@ package com.chinichian.webPodcaster
 import com.chinichian.webPodcaster.ItemListService
 
 class PodcastsListController {
-    def ItemListService
+    def itemListService
     
     def index() { 
         def podcasts = Podcasts.findAll()
@@ -14,8 +14,8 @@ class PodcastsListController {
         //http://feeds.feedburner.com/allcnetvideopodcasts?format=xml
         def url = Podcasts.findByName(params.name).url
         def rootNode = new XmlSlurper().parse(url)
-        ItemListService.retriveItems(rootNode.channel.item)
-        render (view: "itemList", model: [items: rootNode.channel.item])
-    
+        def itemList = itemListService.retriveItems(rootNode.channel.item)
+        render (view: "itemList", model: [itemList : itemList])
+        //render (view: "itemList", model: [items: rootNode.channel.item])
     }
 }
