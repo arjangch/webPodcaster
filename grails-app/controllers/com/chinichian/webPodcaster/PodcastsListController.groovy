@@ -5,7 +5,7 @@ class PodcastsListController {
     def itemListService
     
     def index() { 
-        def podcasts = Podcasts.findAll()
+        def podcasts = Podcasts.listOrderByName()
         render (view: "index", model: [podcasts: podcasts])
     } 
     

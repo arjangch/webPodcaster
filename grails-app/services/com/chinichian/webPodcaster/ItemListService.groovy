@@ -7,9 +7,10 @@ class ItemListService {
         def videoItemList = []  
         for (item in items){
             Video video = new Video();
-            video.title = item.title.text()
             
-            video.date = new Date(item.pubDate.text()).getDateString() 
+			video.title = item.title.text()
+            video.thumbnail = item.thumbnail.@url.text()
+			video.date = new Date(item.pubDate.text()).format("yyyy-MMM-d") 
              
             if (item.enclosure.@url.text()) video.videoUrl = item.enclosure.@url.text() 
             else if(item.content.@url.text()) video.videoUrl = item.content.@url.text()
