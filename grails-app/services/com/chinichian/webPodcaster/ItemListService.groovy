@@ -13,8 +13,6 @@ class ItemListService {
 			
 			if (item.pubDate.text())
 				video.date = new Date(item.pubDate.text()).format("yyyy-MMM-d") 
-            else if (item.date.text())
-				video.date = item.date.text()
 			
             if (item.enclosure.@url.text()) video.videoUrl = item.enclosure.@url.text() 
             else if(item.content.@url.text()) video.videoUrl = item.content.@url.text()
