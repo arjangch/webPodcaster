@@ -14,7 +14,6 @@ class BootStrap {
 		new Podcasts(name: 'Dilbert', url: 'http://ringtales.com/dilbert.xml').save(failOnError: true)
         new Podcasts(name: 'Fashion', url: 'http://www.style.com/services/rss/feeds/fashionshow_podcast.xml').save(failOnError: true)
         new Podcasts(name: 'PBS - Nature', url: 'http://www.pbs.org/wnet/nature/rss/podcast.xml').save(failOnError: true)
-        new Podcasts(name: 'TMZ', url: 'http://www.tmz.com/rss.xml').save(failOnError: true)
         new Podcasts(name: 'NBC', url: 'http://podcastfeeds.nbcnews.com/audio/podcast/MSNBC-NN-NETCAST-M4V.xml').save(failOnError: true)
         new Podcasts(name: 'Global National', url: 'http://feeds.feedburner.com/GlobalNationalVideoPodcast?format=xml').save(failOnError: true) 
         new Podcasts(name: 'Al Jazeera', url: 'http://feeds.aljazeera.net/podcasts/aljazeeraworldHD?format=xml').save(failOnError: true)
