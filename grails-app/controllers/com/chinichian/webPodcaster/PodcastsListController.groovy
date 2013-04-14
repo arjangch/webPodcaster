@@ -7,15 +7,12 @@ class PodcastsListController {
     def index() { 
         def podcasts = Podcasts.findAll()
         render (view: "index", model: [podcasts: podcasts])
-    }
+    } 
     
     def itemList() { 
-        //http://feeds.pbs.org/pbs/wgbh/nova-video
-        //http://feeds.feedburner.com/allcnetvideopodcasts?format=xml
         def url = Podcasts.findByName(params.name).url
         def rootNode = new XmlSlurper().parse(url)
-        def itemList = itemListService.retriveItems(rootNode.channel.item)
-        render (view: "itemList", model: [itemList : itemList])
-        //render (view: "itemList", model: [items: rootNode.channel.item])
+        def videoItemList = itemListService.retriveItems(rootNode.channel.item)
+        render (view: "itemList", model: [videoItemList : videoItemList])
     }
 }

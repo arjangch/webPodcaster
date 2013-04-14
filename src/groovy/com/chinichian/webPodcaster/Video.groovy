@@ -1,5 +1,5 @@
 package com.chinichian.webPodcaster
-class ItemVideo {
+class Video {
  String title
  String date
  String videoUrl
