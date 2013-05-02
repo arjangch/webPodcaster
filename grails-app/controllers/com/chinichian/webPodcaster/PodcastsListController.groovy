@@ -11,7 +11,6 @@ class PodcastsListController {
     
     def itemList() { 
         params.max = params.max?:30
-        println params.int('max')
         def url = Podcasts.findByName(params.name).url
         def rootNode = new XmlSlurper().parse(url)
         def videoItemList = itemListService.retriveItems(rootNode.channel.item)
