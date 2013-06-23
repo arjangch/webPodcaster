@@ -16,4 +16,12 @@ class PodcastsListController {
         def videoItemList = itemListService.retriveItems(rootNode.channel.item)
         render (view: "itemList", model: [params:params, videoItemList : videoItemList])
     }
+	
+	def playAllPodcastVideos() {
+		params.max = params.max?:30
+		def url = Podcasts.findByName(params.name).url
+		def rootNode = new XmlSlurper().parse(url)
+		def videoItemList = itemListService.retriveItems(rootNode.channel.item)
+		render (view: "playAllPodcastVideos", model: [params:params, videoItemList : videoItemList])
+	}
 }
