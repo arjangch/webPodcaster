@@ -30,10 +30,10 @@ environments {
     }
     production {
         dataSource {
-            dbCreate = "" // one of 'create', 'create-drop','update'
+            dbCreate = "create-drop" // one of 'create', 'create-drop','update'
 			url = "jdbc:mysql://localhost/webpodcaster?useUnicode=yes&characterEncoding=UTF-8"
-			username = "webpodcasteruser"
-			password = "humas396$teast"
+			username = ""
+			password = ""
 			dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
             properties {
                maxActive = -1
