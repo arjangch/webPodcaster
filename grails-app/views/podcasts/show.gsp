@@ -32,6 +32,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${podcastsInstance?.podcastGroup}">
+				<li class="fieldcontain">
+					<span id="podcastGroup-label" class="property-label"><g:message code="podcasts.podcastGroup.label" default="Podcast Group" /></span>
+					
+						<span class="property-value" aria-labelledby="podcastGroup-label"><g:fieldValue bean="${podcastsInstance}" field="podcastGroup"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${podcastsInstance?.url}">
 				<li class="fieldcontain">
 					<span id="url-label" class="property-label"><g:message code="podcasts.url.label" default="Url" /></span>

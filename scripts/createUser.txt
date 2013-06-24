@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS webpodcaster;
+use mysql;
+INSERT INTO user (Host,User,Password) VALUES('localhost','webpodcasteruser',PASSWORD('humas396$teast'));
+flush privileges; 
+grant all privileges on webpodcaster.* to webpodcasteruser@localhost;
+flush privileges; 

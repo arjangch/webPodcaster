@@ -26,6 +26,8 @@
 					
 						<g:sortableColumn property="name" title="${message(code: 'podcasts.name.label', default: 'Name')}" />
 					
+						<g:sortableColumn property="podcastGroup" title="${message(code: 'podcasts.podcastGroup.label', default: 'Podcast Group')}" />
+					
 						<g:sortableColumn property="url" title="${message(code: 'podcasts.url.label', default: 'Url')}" />
 					
 					</tr>
@@ -35,6 +37,8 @@
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td><g:link action="show" id="${podcastsInstance.id}">${fieldValue(bean: podcastsInstance, field: "name")}</g:link></td>
+					
+						<td>${fieldValue(bean: podcastsInstance, field: "podcastGroup")}</td>
 					
 						<td>${fieldValue(bean: podcastsInstance, field: "url")}</td>
 					

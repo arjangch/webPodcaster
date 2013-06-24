@@ -13,8 +13,13 @@ hibernate {
 environments {
     development {
         dataSource {
-            dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+            dbCreate = "create-drop" // one of 'create', 'create-drop','update'
+			url = "jdbc:mysql://localhost/webpodcaster?useUnicode=yes&characterEncoding=UTF-8"
+			username = "root"
+			password = ""
+			dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
+
+			show_sql = true
         }
     }
     test {
@@ -25,9 +30,11 @@ environments {
     }
     production {
         dataSource {
-            dbCreate = "create-drop"
-            url = "jdbc:h2:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
-            pooled = true
+            dbCreate = "" // one of 'create', 'create-drop','update'
+			url = "jdbc:mysql://localhost/webpodcaster?useUnicode=yes&characterEncoding=UTF-8"
+			username = "webpodcasteruser"
+			password = "humas396$teast"
+			dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
             properties {
                maxActive = -1
                minEvictableIdleTimeMillis=1800000

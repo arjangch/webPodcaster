@@ -10,6 +10,14 @@
 	<g:textField name="name" value="${podcastsInstance?.name}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: podcastsInstance, field: 'podcastGroup', 'error')} ">
+	<label for="podcastGroup">
+		<g:message code="podcasts.podcastGroup.label" default="Podcast Group" />
+		
+	</label>
+	<g:textField name="podcastGroup" value="${podcastsInstance?.podcastGroup}"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: podcastsInstance, field: 'url', 'error')} ">
 	<label for="url">
 		<g:message code="podcasts.url.label" default="Url" />
