@@ -1,6 +1,6 @@
 dataSource {
     pooled = true
-    driverClassName = "org.h2.Driver"
+    driverClassName = "com.mysql.jdbc.Driver"
     username = "sa"
     password = ""
 }
@@ -35,6 +35,7 @@ environments {
 			username = ""
 			password = ""
 			dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
+			pooled = true
             properties {
                maxActive = -1
                minEvictableIdleTimeMillis=1800000
@@ -48,3 +49,4 @@ environments {
         }
     }
 }
+
